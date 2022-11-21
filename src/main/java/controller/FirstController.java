@@ -1,7 +1,8 @@
-package com.example.springblog;
+package controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 // Controller - informing our compiler that this class contains methods for our URL patterns.
 @Controller
@@ -30,18 +31,28 @@ public class FirstController {
         return "Greetings " + name + " " + lastName + "!";
     }
 
-//    @GetMapping("/roll-dice")
-//    public String showChoice() {
-//        return "roll-dice";
-//    }
-//
-//    @GetMapping("/roll-dice/(n)")
-//    public String showResults() {
-//        int randomNum = (int) Math.floor(Math.random() * ((7 - 1) +1));
-//
-//        boolean result = n == randomNum;
-//
-//        model.addAttribute("result", result);
-//        return "roll-dice";
+    @GetMapping("/roll-dice")
+    public String showChoices() {
+        return "roll-dice";
     }
+
+    // To show results of guess
+    @GetMapping("/roll-dice/{n}")
+    public String showResults(@PathVariable int n, Model model) {
+        // Establish the random number variable
+        int randomNum = (int) Math.floor(Math.random() * ((7 - 1) + 1));
+
+        // check if the path variable is equal to the random number
+
+        boolean result = n == randomNum;
+
+        model.addAttribute("result", result);
+        model.addAttribute("randomNum", randomNum);
+
+        return "roll-dice";
+    }
+
+
+}
+
 

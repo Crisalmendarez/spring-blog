@@ -1,4 +1,4 @@
-package com.example.springblog;
+package controller;
 
 
 import org.springframework.stereotype.Controller;
