@@ -1,10 +1,10 @@
 package controller;
 
-import com.example.springblog.models.Post;
-import com.example.springblog.repositories.PostRepository;
+import models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import repositories.PostRepository;
 
 import java.util.ArrayList;
 import java.util.List;

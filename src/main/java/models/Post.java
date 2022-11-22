@@ -1,4 +1,4 @@
-package com.example.springblog.models;
+package models;
 
 
 import javax.persistence.*;
