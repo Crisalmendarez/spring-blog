@@ -1,5 +1,4 @@
-package controller;
-
+package com.example.springblog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
